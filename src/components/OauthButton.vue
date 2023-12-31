@@ -4,7 +4,10 @@
     :class="{ linked: linked }"
     @click="redirect"
   >
-    <img v-if="provider.button_image" :src="provider.button_image">
+    <img
+      v-if="provider.button_image"
+      :src="provider.button_image"
+    >
     <span>{{ provider.button_text + ((linked) ? " linked" : "") }}</span>
   </div>
 </template>

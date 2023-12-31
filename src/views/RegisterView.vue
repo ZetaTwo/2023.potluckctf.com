@@ -1,6 +1,9 @@
 <template>
   <h1>Register</h1>
-  <RemoteForm :form="form || $store.state.forms.register" @submit="register" />
+  <RemoteForm
+    :form="form || $store.state.forms.register"
+    @submit="register"
+  />
 </template>
 
 <script>

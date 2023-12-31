@@ -20,10 +20,16 @@
         </template>
         <template v-else>
           <h4>{{ $store.state.team.name }}</h4>
-          <h5 v-if="$store.state.team.eligible" class="eligible">
+          <h5
+            v-if="$store.state.team.eligible"
+            class="eligible"
+          >
             Potluck Class
           </h5>
-          <h5 v-else class="eligible">
+          <h5
+            v-else
+            class="eligible"
+          >
             Open Class
           </h5>
           <RemoteForm
@@ -43,20 +49,32 @@
         <h3>Link account</h3>
         <div class="sso-area">
           <div class="sso-container">
-            <template v-for="provider in $store.state.oauthProviders" :key="provider">
-              <OauthButton v-if="provider" :provider="provider" />
+            <template
+              v-for="provider in $store.state.oauthProviders"
+              :key="provider"
+            >
+              <OauthButton
+                v-if="provider"
+                :provider="provider"
+              />
             </template>
           </div>
         </div>
       </div>
     </div>
     <div class="center">
-      <button class="button signout-button" @click="signOut">
+      <button
+        class="button signout-button"
+        @click="signOut"
+      >
         Sign Out
       </button>
     </div>
   </template>
-  <div v-else class="center">
+  <div
+    v-else
+    class="center"
+  >
     <h3>Not logged in</h3>
   </div>
 </template>

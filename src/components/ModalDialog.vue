@@ -1,8 +1,17 @@
 <template>
-  <div v-if="$store.state.modals[id].visible" class="modal">
-    <div class="modal-mask" @click="$emit('modal-close')" />
+  <div
+    v-if="$store.state.modals[id].visible"
+    class="modal"
+  >
+    <div
+      class="modal-mask"
+      @click="$emit('modal-close')"
+    />
     <div class="modal-content-wrapper">
-      <div :id="id" class="modal-contents">
+      <div
+        :id="id"
+        class="modal-contents"
+      >
         <slot />
       </div>
     </div>

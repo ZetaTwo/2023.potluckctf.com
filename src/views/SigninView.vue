@@ -2,8 +2,14 @@
   <h1>Sign in</h1>
   <div class="sso-area">
     <div class="sso-container">
-      <template v-for="provider in $store.state.oauthProviders" :key="provider">
-        <OauthButton v-if="provider" :provider="provider" />
+      <template
+        v-for="provider in $store.state.oauthProviders"
+        :key="provider"
+      >
+        <OauthButton
+          v-if="provider"
+          :provider="provider"
+        />
       </template>
     </div>
   </div>

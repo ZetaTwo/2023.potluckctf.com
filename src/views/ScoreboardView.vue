@@ -6,7 +6,10 @@
     type="message"
   />
   <template v-if="$store.state.scoreboardFrozen && $store.state.user && $store.state.user.permissions.includes('core.force_unfrozen_scoreboard')">
-    <button class="button view-unfrozen" @click="viewUnfrozen">
+    <button
+      class="button view-unfrozen"
+      @click="viewUnfrozen"
+    >
       View unfrozen scoreboard (Does not unfreeze the scoreboard, might load for a while. Click again to refresh.)
     </button>
   </template>
@@ -40,7 +43,10 @@
   >
     Go to my team
   </button>
-  <div class="top-container" :style="marginStyle">
+  <div
+    class="top-container"
+    :style="marginStyle"
+  >
     <div class="grid-container-container">
       <div
         ref="grid-container"
@@ -58,9 +64,15 @@
           @click="openChallenge(challenge.id)"
         >
           <span class="hover">{{ challenge.title }}</span>
-          <span v-if="!challenge.top_solved_teams.length" class="material-icons">flag</span>
+          <span
+            v-if="!challenge.top_solved_teams.length"
+            class="material-icons"
+          >flag</span>
         </div>
-        <template v-for="(team, index) in teams" :key="team.id">
+        <template
+          v-for="(team, index) in teams"
+          :key="team.id"
+        >
           <template v-if="page * teamsPerPage + index+1 != 1">
             <span class="table-margin">
               {{ page * teamsPerPage + index+1 }}
@@ -90,15 +102,27 @@
                         </template> -->
         </template>
       </div>
-      <span v-if="!$store.state.scoreboardLoaded" class="table-margin">Loading...</span>
+      <span
+        v-if="!$store.state.scoreboardLoaded"
+        class="table-margin"
+      >Loading...</span>
     </div>
-    <div v-if="!loadAll && allTeams.length > teamsPerPage" class="pagination">
+    <div
+      v-if="!loadAll && allTeams.length > teamsPerPage"
+      class="pagination"
+    >
       <template v-if="page >= 3">
-        <button class="button" @click="gotoPage(0)">
+        <button
+          class="button"
+          @click="gotoPage(0)"
+        >
           1
         </button>
         <span>...</span>
-        <button class="button" @click="gotoPage(page-1)">
+        <button
+          class="button"
+          @click="gotoPage(page-1)"
+        >
           {{ page }}
         </button>
       </template>
@@ -113,16 +137,25 @@
         </button>
       </template>
 
-      <button class="button current" @click="gotoPage(page)">
+      <button
+        class="button current"
+        @click="gotoPage(page)"
+      >
         {{ page+1 }}
       </button>
 
       <template v-if="pageCount - page >= 4">
-        <button class="button" @click="gotoPage(page+1)">
+        <button
+          class="button"
+          @click="gotoPage(page+1)"
+        >
           {{ page+2 }}
         </button>
         <span>...</span>
-        <button class="button" @click="gotoPage(pageCount-1)">
+        <button
+          class="button"
+          @click="gotoPage(pageCount-1)"
+        >
           {{ pageCount }}
         </button>
       </template>
@@ -147,7 +180,10 @@
         @keyup.enter="gotoPage()"
       >
       <br>
-      <button class="button" @click="loadAll = true">
+      <button
+        class="button"
+        @click="loadAll = true"
+      >
         Load all teams
       </button>
     </div>

@@ -1,6 +1,9 @@
 <template>
   <h1>Announcements</h1>
-  <template v-for="announcement in $store.getters.orderedAnnouncements" :key="announcement">
+  <template
+    v-for="announcement in $store.getters.orderedAnnouncements"
+    :key="announcement"
+  >
     <h3>{{ announcement.title }}</h3>
     <p class="description" v-html="announcement.description" /> <!-- eslint-disable-line vue/no-v-html -->
     <p class="time">

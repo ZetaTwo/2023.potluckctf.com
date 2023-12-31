@@ -1,6 +1,9 @@
 <template>
   <nav>
-    <input v-model="checked" type="checkbox">
+    <input
+      v-model="checked"
+      type="checkbox"
+    >
     <img src="@/assets/hamburger.svg">
     <ul>
       <li
@@ -40,18 +43,27 @@
       </li>
       <li>
         <router-link :to="{ name: 'announcements'}">
-          <span class="material-icons" :class="{unread}">{{ unread ? "notifications_active" : "notifications_none" }}</span>
+          <span
+            class="material-icons"
+            :class="{unread}"
+          >{{ unread ? "notifications_active" : "notifications_none" }}</span>
         </router-link>
       </li>
     </ul>
     <ul v-if="!$store.state.archived">
       <li>
-        <router-link v-if="!$store.state.user" :to="{ name: 'signin'}">
+        <router-link
+          v-if="!$store.state.user"
+          :to="{ name: 'signin'}"
+        >
           <span @click="uncheck">
             Sign in
           </span>
         </router-link>
-        <router-link v-else :to="{ name: 'profile'}">
+        <router-link
+          v-else
+          :to="{ name: 'profile'}"
+        >
           <span @click="uncheck">
             {{ $store.state.user.username }}
           </span>

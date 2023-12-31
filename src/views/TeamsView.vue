@@ -2,11 +2,17 @@
   <h1>{{ teamName }}</h1>
   <template v-if="team">
     <h5>
-      <div class="item" :title="`${team.score} points`">
+      <div
+        class="item"
+        :title="`${team.score} points`"
+      >
         <span>{{ team.score }}</span>
         <span class="material-icons">control_point_duplicate</span>
       </div>
-      <div class="item" :title="`${Object.keys(team.solves).length} solves`">
+      <div
+        class="item"
+        :title="`${Object.keys(team.solves).length} solves`"
+      >
         <span>{{ Object.keys(team.solves).length }}</span>
         <span class="material-icons">published_with_changes</span>
       </div>

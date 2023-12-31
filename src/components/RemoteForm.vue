@@ -1,6 +1,12 @@
 <template>
-  <template v-for="(field, index) in form.fields" :key="field.name">
-    <div v-if="checkVisible(field)" :class="{'form-input-margin': index !== 0 && field.widget.name !== 'SelectOther'}">
+  <template
+    v-for="(field, index) in form.fields"
+    :key="field.name"
+  >
+    <div
+      v-if="checkVisible(field)"
+      :class="{'form-input-margin': index !== 0 && field.widget.name !== 'SelectOther'}"
+    >
       <template v-if="field.widget.name === 'TextInput'">
         <div class="input-text">
           <p>{{ field.label }}</p>
@@ -65,14 +71,20 @@
           <p>{{ field.label }}</p>
           <small>{{ field.help_text }}</small>
         </div>
-        <label class="checkbox-label" :for="field.name+'-yes'"><input
+        <label
+          class="checkbox-label"
+          :for="field.name+'-yes'"
+        ><input
           :id="field.name+'-yes'"
           v-model="answers[field.name]"
           type="radio"
           :name="field.name"
           value="true"
         >Ja</label>
-        <label class="checkbox-label" :for="field.name+'-no'"><input
+        <label
+          class="checkbox-label"
+          :for="field.name+'-no'"
+        ><input
           :id="field.name+'-no'"
           v-model="answers[field.name]"
           type="radio"
@@ -85,8 +97,14 @@
           <p>{{ field.label }}</p>
           <small>{{ field.help_text }}</small>
         </div>
-        <template v-for="choice in field.widget.choices" :key="choice[0]">
-          <label class="checkbox-label" :for="field.name+choice[0]"><input
+        <template
+          v-for="choice in field.widget.choices"
+          :key="choice[0]"
+        >
+          <label
+            class="checkbox-label"
+            :for="field.name+choice[0]"
+          ><input
             :id="field.name+choice[0]"
             v-model="answers[field.name]"
             type="radio"
@@ -100,8 +118,14 @@
           <p>{{ field.label }}</p>
           <small>{{ field.help_text }}</small>
         </div>
-        <template v-for="choice in field.widget.choices" :key="choice[0]">
-          <label class="checkbox-label" :for="field.name+choice[0]"><input
+        <template
+          v-for="choice in field.widget.choices"
+          :key="choice[0]"
+        >
+          <label
+            class="checkbox-label"
+            :for="field.name+choice[0]"
+          ><input
             :id="field.name+choice[0]"
             v-model="answers[field.name]"
             type="checkbox"
@@ -114,7 +138,10 @@
         widget not implemented
         {{ field }}
       </template>
-      <template v-for="error in field.errors" :key="error">
+      <template
+        v-for="error in field.errors"
+        :key="error"
+      >
         <p class="error">
           {{ error }}
         </p>
@@ -128,7 +155,10 @@
     :value="buttonText"
     @click="handleSubmit"
   >
-  <template v-for="error in form.non_field_errors" :key="error">
+  <template
+    v-for="error in form.non_field_errors"
+    :key="error"
+  >
     <p class="error">
       {{ error }}
     </p>

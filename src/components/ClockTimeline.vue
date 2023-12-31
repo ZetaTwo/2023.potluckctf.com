@@ -3,7 +3,10 @@
     <h4 v-if="message !== ''">
       {{ message }}
     </h4>
-    <div v-if="!ended" class="countdown-box">
+    <div
+      v-if="!ended"
+      class="countdown-box"
+    >
       <div class="countdown">
         <div class="digits">
           {{ daysLeft }}
@@ -23,13 +26,19 @@
         <label>Seconds</label>
       </div>
     </div>
-    <div v-if="running" class="progress">
+    <div
+      v-if="running"
+      class="progress"
+    >
       <div
         class="progress-bar"
         :style="{width: progress.toString() + '%'}"
       />
     </div>
-    <div class="date-box" :style="{justifyContent: running ? 'space-between' : 'center'}">
+    <div
+      class="date-box"
+      :style="{justifyContent: running ? 'space-between' : 'center'}"
+    >
       <div>{{ dateToISO($store.state.start_time) }}</div>
       <div v-if="!running">
         -

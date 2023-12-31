@@ -1,6 +1,9 @@
 <template>
   <div class="ourcontainer alertcontainer">
-    <div class="alert" :class="{error: type==='error', message: type==='message'}">
+    <div
+      class="alert"
+      :class="{error: type==='error', message: type==='message'}"
+    >
       <p>{{ content }}</p>
     </div>
   </div>

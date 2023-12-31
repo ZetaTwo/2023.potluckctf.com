@@ -7,12 +7,21 @@
     <div @click="openModal()">
       <span class="title">{{ challenge.status === 2 ? "???" : challenge.title }}</span>
       <ul class="categories">
-        <li v-for="category in challenge.categories" :key="category">
+        <li
+          v-for="category in challenge.categories"
+          :key="category"
+        >
           {{ category }}
         </li>
       </ul>
-      <span class="solves" :title="`This challenge has been sloved by ${challenge.solves} teams`">{{ challenge.solves }}</span>
-      <span class="score" :title="`This challenge gives ${$store.getters.challScore(challenge.id)} points to each team that solves it`">{{ $store.getters.challScore(challenge.id) }}</span>
+      <span
+        class="solves"
+        :title="`This challenge has been sloved by ${challenge.solves} teams`"
+      >{{ challenge.solves }}</span>
+      <span
+        class="score"
+        :title="`This challenge gives ${$store.getters.challScore(challenge.id)} points to each team that solves it`"
+      >{{ $store.getters.challScore(challenge.id) }}</span>
     </div>
   </div>
 </template>

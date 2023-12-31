@@ -1,7 +1,10 @@
 <template>
   <div class="logo-container">
     <div class="logo">
-      <img src="@/assets/logo.png" alt="">
+      <img
+        src="@/assets/logo.png"
+        alt=""
+      >
       <h1>37C3 Potluck CTF</h1>
     </div>
   </div>

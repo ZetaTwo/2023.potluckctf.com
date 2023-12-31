@@ -1,5 +1,8 @@
 <template>
-  <ModalDialog id="challengeModal" @modal-close="closeModal()">
+  <ModalDialog
+    id="challengeModal"
+    @modal-close="closeModal()"
+  >
     <div class="modal-contents">
       <h2>{{ challenge.title }}</h2>
       <span
@@ -8,16 +11,25 @@
         @click="closeModal()"
       >close</span>
       <ul class="categories">
-        <li v-for="category in challenge.categories" :key="category">
+        <li
+          v-for="category in challenge.categories"
+          :key="category"
+        >
           {{ category }}
         </li>
       </ul>
       <h5>
-        <div class="item" :title="`${$store.getters.challScore(challenge.id)} points`">
+        <div
+          class="item"
+          :title="`${$store.getters.challScore(challenge.id)} points`"
+        >
           <span>{{ $store.getters.challScore(challenge.id) }}</span>
           <span class="material-icons">control_point_duplicate</span>
         </div>
-        <div class="item" :title="`${challenge.solves} solves`">
+        <div
+          class="item"
+          :title="`${challenge.solves} solves`"
+        >
           <span>{{ challenge.solves }}</span>
           <span class="material-icons">published_with_changes</span>
         </div>
@@ -27,7 +39,10 @@
           <p v-html="challenge.description" /> <!-- eslint-disable-line vue/no-v-html -->
         </div>
         <div>
-          <div class="align" title="Authors">
+          <div
+            class="align"
+            title="Authors"
+          >
             <span class="material-icons">group</span>
             <span class="material-icons">edit</span>
             <span
@@ -44,7 +59,10 @@
               title="File"
             >
               <span class="material-icons">folder</span>
-              <a :href="file.url" target="_blank">{{ file.name }}</a>
+              <a
+                :href="file.url"
+                target="_blank"
+              >{{ file.name }}</a>
             </div>
           </template>
           <template v-if="challenge.services">
@@ -63,7 +81,10 @@
               <code v-else>{{ service.user_display }}</code>
             </div>
           </template>
-          <div v-if="challenge.top_solved_teams.length" class="first-teams">
+          <div
+            v-if="challenge.top_solved_teams.length"
+            class="first-teams"
+          >
             <p>First teams:</p>
             <span
               v-for="(team, index) in challenge.top_solved_teams"
@@ -74,13 +95,22 @@
         </div>
       </div>
       <template v-if="!$store.state.archived">
-        <div v-if="!$store.state.user" class="input-replacer disabled">
+        <div
+          v-if="!$store.state.user"
+          class="input-replacer disabled"
+        >
           <span>Log in to submit flags</span>
         </div>
-        <div v-else-if="!$store.state.team" class="input-replacer disabled">
+        <div
+          v-else-if="!$store.state.team"
+          class="input-replacer disabled"
+        >
           <span>Create or join a team to submit flags</span>
         </div>
-        <div v-else-if="challenge.id in $store.state.team.solves" class="input-replacer solved">
+        <div
+          v-else-if="challenge.id in $store.state.team.solves"
+          class="input-replacer solved"
+        >
           <span>Solved!</span>
         </div>
         <input
