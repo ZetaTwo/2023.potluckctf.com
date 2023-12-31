@@ -55,7 +55,7 @@ export default createStore({
                 }
 
                 // FIXME bad code since it makes processChallenge run in O(n) (loading all challenges is O(n^2/2)), but n is usually low enough that it shouldn't be an issue for the time being. nevertheless, this needs fixing at some point
-                for (var challengeId in state.challenges) {
+                for (const challengeId in state.challenges) {
                     if (state.challenges[challengeId].unlocked_by === challenge.id) {
                         state.challenges[challenge.id].unlocks = challengeId
                     }
@@ -134,7 +134,7 @@ export default createStore({
 
             state.toasts[id] = {
                 ...toast,
-                id: id,
+                id,
                 fadeout: false,
             }
 

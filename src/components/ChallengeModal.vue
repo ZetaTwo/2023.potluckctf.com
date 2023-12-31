@@ -113,7 +113,7 @@ export default {
     },
     computed: {
         files () {
-            var files = []
+            const files = []
             this.challenge.file_urls.forEach(f => {
                 const parts = f.split('/')
                 files.push({

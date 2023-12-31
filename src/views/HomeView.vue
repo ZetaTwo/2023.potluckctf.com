@@ -11,7 +11,9 @@
       v-if="!$store.state.archived"
       :to="{ name: 'signin' }"
     >
-      <button class="button">Register!</button>
+      <button class="button">
+        Register!
+      </button>
     </router-link>
   </div>
   <div class="content">
@@ -33,9 +35,9 @@
         <li>3rd: Trophy + One Binary Ninja personal license</li>
       </ul>
       <h3>Discord</h3>
-    <p>
-      We have a <a href="https://discord.gg/sAxTsvgReQ">Discord server for the event</a> where you can ask questions if there are problems or chat with other particiants. Note, you are not allowed to ask for hints for any challenge.
-    </p>
+      <p>
+        We have a <a href="https://discord.gg/sAxTsvgReQ">Discord server for the event</a> where you can ask questions if there are problems or chat with other particiants. Note, you are not allowed to ask for hints for any challenge.
+      </p>
     </div>
     <div>
       <h3>Rules</h3>
@@ -55,16 +57,16 @@
   <h3>Sponsors</h3>
   <div class="sponsorcontainer">
     <div style="text-align: center;">
-    <a href="https://www.google.com">
-      <img
-        class="sponsor"
-        src="@/assets/sponsors/google.svg"
-        alt="Google"
-      >
-    </a>
+      <a href="https://www.google.com">
+        <img
+          class="sponsor"
+          src="@/assets/sponsors/google.svg"
+          alt="Google"
+        >
+      </a>
       <p style="text-align: center">
-    Infra sponsored by <a href="https://goo.gle/ctfsponsorship">goo.gle/ctfsponsorship</a>
-  </p>
+        Infra sponsored by <a href="https://goo.gle/ctfsponsorship">goo.gle/ctfsponsorship</a>
+      </p>
     </div>
     <a href="https://binary.ninja">
       <img

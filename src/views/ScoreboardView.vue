@@ -273,10 +273,10 @@ export default {
         },
         openChallenge (id) {
             if (this.$store.state.challenges[id].status) return
-            router.push({ name: 'challenge', params: { id: id } })
+            router.push({ name: 'challenge', params: { id } })
         },
         openTeam (id) {
-            router.push({ name: 'team', params: { id: id } })
+            router.push({ name: 'team', params: { id } })
         },
         viewUnfrozen () {
             networking.reloadScoreboard(true)

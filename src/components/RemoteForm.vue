@@ -225,7 +225,7 @@ export default {
         },
         onlyNumber: function (event) {
             event = (event) || window.event
-            var charCode = (event.which) ? event.which : event.keyCode
+            const charCode = (event.which) ? event.which : event.keyCode
             if (charCode < 48 || charCode > 57) {
                 event.preventDefault()
             } else {
